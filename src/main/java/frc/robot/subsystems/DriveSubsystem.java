@@ -18,10 +18,14 @@ public class DriveSubsystem extends SubsystemBase {
   /** Creates a new DriveSubsystem. */
 
   //instantiating DRIVETRAIN motors
+
+  //on left front side in a cluster (near clamshell open)
   private WPI_TalonFX leftDrivePrimary=new WPI_TalonFX(1);
   private WPI_TalonFX leftDriveF1=new WPI_TalonFX(2);
   private WPI_TalonFX leftDriveF2=new WPI_TalonFX(3);
 
+
+  //on right front side in a cluster (near clamshell open)
   private WPI_TalonFX rightDrivePrimary=new WPI_TalonFX(4);
   private WPI_TalonFX rightDriveF1=new WPI_TalonFX(5);
   private WPI_TalonFX rightDriveF2=new WPI_TalonFX(6);
@@ -89,7 +93,7 @@ public class DriveSubsystem extends SubsystemBase {
     DRIVE.arcadeDrive(leftStickY, rightStickX);
   }
 
-
+//hard stops robot
   public void stop(){
     leftDrivePrimary.set(ControlMode.PercentOutput, 0);
     rightDrivePrimary.set(ControlMode.PercentOutput, 0);

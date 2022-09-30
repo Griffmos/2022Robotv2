@@ -5,7 +5,6 @@
 package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
-import com.ctre.phoenix.motorcontrol.can.TalonFX;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -16,15 +15,15 @@ public class IntakeAndConveyerSubsystem extends SubsystemBase {
 
     
   private WPI_TalonFX conveyerMotor = new WPI_TalonFX(13); //DOCUMENT WHERE THIS IS
-  private double currConveyerPercOut; //used to display percent output of conveyer on smartdashboard since percent output is passed in and there is no other way to consistantly access it
+  private double currConveyerPercOut; //used to display percent output of conveyer on smartdashboard 
 
    
   private WPI_TalonFX intakeMotor = new WPI_TalonFX(11); //intake motor on the pop out intake shield
-  private double currIntakePercOut;//used to display intake motor percent output on smartdashboard since percent output is passed in and there is no other way to consistantly access it
+  private double currIntakePercOut;//used to display intake motor percent output on smartdashboard 
 
   private WPI_TalonFX gateMotor = new WPI_TalonFX(9); //located on ceiling of ball storage
-  private double currGatePercOut; //used to display gate motor percent output on smartdashboard since percent output is passed in and there is no other way to consistantly access it
-
+  private double currGatePercOut; //used to display gate motor percent output on smartdashboard 
+  
 
 
   /** Creates a new IntakeAndConveyerSubsystem. */

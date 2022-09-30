@@ -12,7 +12,11 @@ import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.Utilities.SpectrumAxisButton;
 import frc.robot.Utilities.SpectrumAxisButton.ThresholdType;
+import frc.robot.subsystems.ConveyerSubsystem;
 import frc.robot.subsystems.DriveSubsystem;
+import frc.robot.subsystems.IntakeAndConveyerSubsystem;
+import frc.robot.subsystems.IntakeSubsystem;
+import frc.robot.subsystems.ShooterSubsystem;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -35,7 +39,16 @@ public class RobotContainer {
 
   //THE OFFICIAL SUBSYSTEMS
 
+  private ConveyerSubsystem CONVEYER_SUBSYSTEM = new ConveyerSubsystem();
+
   private DriveSubsystem DRIVE_SUBSYSTEM = new DriveSubsystem();
+
+  private IntakeAndConveyerSubsystem INTAKE_AND_CONVEYER_SUBSYSTEM = new IntakeAndConveyerSubsystem();
+
+  private IntakeSubsystem INTAKE_SUBSYSTEM = new IntakeSubsystem();
+
+  private ShooterSubsystem SHOOTER_SUBSYSTEM = new ShooterSubsystem();
+
 
 
 

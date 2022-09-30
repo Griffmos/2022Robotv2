@@ -34,12 +34,12 @@ public class IntakeSubsystem extends SubsystemBase {
   }
 
   // Change Speed to the Intake and Gate Motors
-  public void set(double intakeSpeed, double gateSpeed) {
+  public void set(double intakePercOut, double gatePercOut) {
 
-    intakeMotor.set(ControlMode.PercentOutput, intakeSpeed);
-    gateMotor.set(ControlMode.PercentOutput, gateSpeed);
-    currIntakePercOut = intakeSpeed;
-    currGatePercOut = gateSpeed;
+    intakeMotor.set(ControlMode.PercentOutput, intakePercOut);
+    gateMotor.set(ControlMode.PercentOutput, gatePercOut);
+    currIntakePercOut = intakePercOut;
+    currGatePercOut = gatePercOut;
 
   }
 

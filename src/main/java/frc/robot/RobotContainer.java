@@ -12,11 +12,11 @@ import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.Utilities.SpectrumAxisButton;
 import frc.robot.Utilities.SpectrumAxisButton.ThresholdType;
-import frc.robot.subsystems.ConveyerSubsystem;
-import frc.robot.subsystems.DriveSubsystem;
-import frc.robot.subsystems.IntakeAndConveyerSubsystem;
-import frc.robot.subsystems.IntakeSubsystem;
-import frc.robot.subsystems.ShooterSubsystem;
+import frc.robot.Subsystems.ConveyerSubsystem;
+import frc.robot.Subsystems.DriveSubsystem;
+import frc.robot.Subsystems.IntakeAndConveyerSubsystem;
+import frc.robot.Subsystems.IntakeSubsystem;
+import frc.robot.Subsystems.ShooterSubsystem;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a

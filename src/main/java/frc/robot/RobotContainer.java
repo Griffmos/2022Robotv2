@@ -14,7 +14,7 @@ import frc.robot.Utilities.SpectrumAxisButton;
 import frc.robot.Utilities.SpectrumAxisButton.ThresholdType;
 import frc.robot.Subsystems.ConveyerSubsystem;
 import frc.robot.Subsystems.DriveSubsystem;
-import frc.robot.Subsystems.IntakeAndConveyerSubsystem;
+//import frc.robot.Subsystems.IntakeAndConveyerSubsystem;
 import frc.robot.Subsystems.IntakeSubsystem;
 import frc.robot.Subsystems.ShooterSubsystem;
 
@@ -43,7 +43,7 @@ public class RobotContainer {
 
   private DriveSubsystem DRIVE_SUBSYSTEM = new DriveSubsystem();
 
-  private IntakeAndConveyerSubsystem INTAKE_AND_CONVEYER_SUBSYSTEM = new IntakeAndConveyerSubsystem();
+  //private IntakeAndConveyerSubsystem INTAKE_AND_CONVEYER_SUBSYSTEM = new IntakeAndConveyerSubsystem();
 
   private IntakeSubsystem INTAKE_SUBSYSTEM = new IntakeSubsystem();
 

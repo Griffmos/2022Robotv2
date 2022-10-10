@@ -7,12 +7,14 @@ package frc.robot.commands;
 import edu.wpi.first.math.filter.SlewRateLimiter;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.subsystems.DriveSubsystem;
+import frc.robot.Subsystems.DriveSubsystem;
+
+//DefaultDriveCommand is used to send inputs to run the robot, duhhh
 
 public class DefaultDriveCommand extends CommandBase {
   /** Creates a new DefaultDriveCommand. */
 
-  // Objects we need in order to drive
+  //Subsystem objects we need in order to drive
   private DriveSubsystem DRIVE_SUBSYSTEM; // To control motor
   private Joystick CONTROLLER; // get joystick input
 

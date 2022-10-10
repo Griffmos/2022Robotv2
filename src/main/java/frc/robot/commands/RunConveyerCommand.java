@@ -5,11 +5,27 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.Subsystems.ConveyerSubsystem;
+import frc.robot.Subsystems.IntakeSubsystem;
+
+//Used to get conveyer running, after user spins up shooter
 
 public class RunConveyerCommand extends CommandBase {
+
+  //Subsystem objects needed to run the conveyer
+  private IntakeSubsystem INTAKE_SUBSYSTEM = new IntakeSubsystem();
+  private ConveyerSubsystem CONVEYER_SUBSYSTEM = new ConveyerSubsystem();
+
   /** Creates a new RunConveyerCommand. */
-  public RunConveyerCommand() {
+  public RunConveyerCommand(IntakeSubsystem intake, ConveyerSubsystem conveyer) {
     // Use addRequirements() here to declare subsystem dependencies.
+
+    INTAKE_SUBSYSTEM = intake;
+    CONVEYER_SUBSYSTEM = conveyer;
+
+    addRequirements(INTAKE_SUBSYSTEM);
+    addRequirements(CONVEYER_SUBSYSTEM);
+
   }
 
   // Called when the command is initially scheduled.

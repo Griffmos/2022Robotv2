@@ -47,7 +47,7 @@ public class RobotContainer {
 
   private IntakeSubsystem INTAKE_SUBSYSTEM = new IntakeSubsystem();
 
-  private ShooterSubsystem SHOOTER_SUBSYSTEM = new ShooterSubsystem();
+  private ShooterSubsystem SHOOTER_SUBSYSTEM = new ShooterSubsystem();  
 
 
 

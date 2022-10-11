@@ -29,7 +29,7 @@ public class NOT_IN_USEIntakeAndConveyerSubsystem extends SubsystemBase {
 
   /** Creates a new IntakeAndConveyerSubsystem. */
   public NOT_IN_USEIntakeAndConveyerSubsystem() {
-
+    
     conveyerMotor.configFactoryDefault();
     intakeMotor.configFactoryDefault();
     gateMotor.configFactoryDefault();

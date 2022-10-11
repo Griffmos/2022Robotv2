@@ -4,29 +4,26 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.AddressableLED;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Subsystems.ConveyerSubsystem;
 import frc.robot.Subsystems.IntakeSubsystem;
 
-//Used to get conveyer running, after user spins up shooter
+public class RunOuttakeCommand extends CommandBase {
 
-public class RunConveyerCommand extends CommandBase {
+  //subsystems objects we need to run the initake
+  IntakeSubsystem INTAKE_SUBSYSTEM;
+  ConveyerSubsystem CONVEYER_SUBSYSTEM;
 
-  //Subsystem objects needed to run the conveyer
-  private IntakeSubsystem INTAKE_SUBSYSTEM;
-  private ConveyerSubsystem CONVEYER_SUBSYSTEM;
-
-  /** Creates a new RunConveyerCommand. */
-  public RunConveyerCommand(IntakeSubsystem intake, ConveyerSubsystem conveyer) {
+  /** Creates a new RunIntakeCommand. */
+  public RunOuttakeCommand(IntakeSubsystem intake, ConveyerSubsystem conveyer) {
     // Use addRequirements() here to declare subsystem dependencies.
-
     INTAKE_SUBSYSTEM = intake;
     CONVEYER_SUBSYSTEM = conveyer;
 
     addRequirements(INTAKE_SUBSYSTEM);
     addRequirements(CONVEYER_SUBSYSTEM);
 
-    
   }
 
   // Called when the command is initially scheduled.
@@ -36,16 +33,17 @@ public class RunConveyerCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    //values for good conveying balls into shooter
-    CONVEYER_SUBSYSTEM.set(0.5,0.5);
-    INTAKE_SUBSYSTEM.set(1);
+    //values for outtaking ball well (shooting it out the intake side of the robot to avoid penalty)
+    INTAKE_SUBSYSTEM.set(-1);
+    CONVEYER_SUBSYSTEM.set(-0.5, -0.75);
+
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    CONVEYER_SUBSYSTEM.stop();
     INTAKE_SUBSYSTEM.stop();
+    CONVEYER_SUBSYSTEM.stop();
   }
 
   // Returns true when the command should end.

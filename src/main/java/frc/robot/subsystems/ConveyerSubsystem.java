@@ -5,6 +5,7 @@
 package frc.robot.Subsystems;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.InvertType;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -26,6 +27,10 @@ public class ConveyerSubsystem extends SubsystemBase {
   public ConveyerSubsystem() {
       conveyerMotor.configFactoryDefault();  
       gateMotor.configFactoryDefault();
+
+      //these don't have to be inverted to have natural input
+      conveyerMotor.setInverted(InvertType.None);
+      gateMotor.setInverted(InvertType.None);
 
   }
 

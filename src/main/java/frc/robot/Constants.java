@@ -14,5 +14,7 @@ package frc.robot;
  */
 public final class Constants {
 
+    //Limits
     public static final double motorLimitPercent = 0.7; //how much we are reducing the motor's maximum output (via reducing controller input)
+
 }

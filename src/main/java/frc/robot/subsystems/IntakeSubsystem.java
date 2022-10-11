@@ -5,6 +5,7 @@
 package frc.robot.Subsystems;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.InvertType;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -19,6 +20,8 @@ public class IntakeSubsystem extends SubsystemBase {
   
   public IntakeSubsystem() {
     intakeMotor.configFactoryDefault();
+
+    intakeMotor.setInverted(InvertType.InvertMotorOutput); //setting this so it's natural direction (inward) is natural (i.e. pass in +1 it goes in -1 it goes out)
   }
 
   @Override

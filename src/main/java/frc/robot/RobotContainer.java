@@ -12,6 +12,9 @@ import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.Utilities.SpectrumAxisButton;
 import frc.robot.Utilities.SpectrumAxisButton.ThresholdType;
+import frc.robot.commands.RunConveyerCommand;
+import frc.robot.commands.RunIntakeCommand;
+import frc.robot.commands.RunOuttakeCommand;
 import frc.robot.Subsystems.ConveyerSubsystem;
 import frc.robot.Subsystems.DriveSubsystem;
 //import frc.robot.Subsystems.IntakeAndConveyerSubsystem;
@@ -64,7 +67,13 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj.Joystick} or {@link XboxController}), and then passing it to a {@link
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
-  private void configureButtonBindings() {}
+  private void configureButtonBindings() {
+
+    L1_BUMPER.whileHeld(new RunIntakeCommand(INTAKE_SUBSYSTEM, CONVEYER_SUBSYSTEM)); //L1 bumper intakes
+    R1_BUMPER.whileHeld(new RunOuttakeCommand(INTAKE_SUBSYSTEM, CONVEYER_SUBSYSTEM)); //R1 bumper outtakes
+
+    R2_TRIGGER.whileHeld(new RunConveyerCommand(INTAKE_SUBSYSTEM, CONVEYER_SUBSYSTEM)); //R2 trigger runs conveyer (actually pushes ball in)
+  }
 
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.

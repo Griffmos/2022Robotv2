@@ -12,9 +12,11 @@ import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.Utilities.SpectrumAxisButton;
 import frc.robot.Utilities.SpectrumAxisButton.ThresholdType;
-import frc.robot.commands.RunConveyerCommand;
-import frc.robot.commands.RunIntakeCommand;
-import frc.robot.commands.RunOuttakeCommand;
+import frc.robot.Autons.DriveForwardAuton;
+import frc.robot.Commands.DefaultDriveCommand;
+import frc.robot.Commands.RunConveyerCommand;
+import frc.robot.Commands.RunIntakeCommand;
+import frc.robot.Commands.RunOuttakeCommand;
 import frc.robot.Subsystems.ConveyerSubsystem;
 import frc.robot.Subsystems.DriveSubsystem;
 //import frc.robot.Subsystems.IntakeAndConveyerSubsystem;
@@ -59,6 +61,7 @@ public class RobotContainer {
   public RobotContainer() {
     // Configure the button bindings
     configureButtonBindings();
+    defaultCommands();
   }
 
   /**
@@ -75,6 +78,11 @@ public class RobotContainer {
     R2_TRIGGER.whileHeld(new RunConveyerCommand(INTAKE_SUBSYSTEM, CONVEYER_SUBSYSTEM)); //R2 trigger runs conveyer (actually pushes ball in)
   }
 
+  //runs if no other commands are running
+  private void defaultCommands() {
+    DRIVE_SUBSYSTEM.setDefaultCommand(new DefaultDriveCommand(DRIVE_SUBSYSTEM, CONTROLLER));
+  }
+
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.
    *
@@ -82,7 +90,7 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // An ExampleCommand will run in autonomous
-    return new SequentialCommandGroup();
+    return new DriveForwardAuton(DRIVE_SUBSYSTEM);
     }
   }
 

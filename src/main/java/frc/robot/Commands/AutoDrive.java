@@ -5,26 +5,30 @@
 package frc.robot.Commands;
 
 import edu.wpi.first.math.filter.SlewRateLimiter;
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Subsystems.DriveSubsystem;
 
 //DefaultDriveCommand is used to send inputs to run the robot, duhhh
 
-public class DefaultDriveCommand extends CommandBase {
+public class AutoDrive extends CommandBase {
   /** Creates a new DefaultDriveCommand. */
 
   //Subsystem objects we need in order to drive
   private DriveSubsystem DRIVE_SUBSYSTEM; // To control motor
-  private Joystick CONTROLLER; // get joystick input
+
+  //for the passed in speeds
+  private double forwardBack;
+  private double leftRight;
 
   // Limits the maximum acceleration
   private SlewRateLimiter direction = new SlewRateLimiter(2); // limits for forward and back
   private SlewRateLimiter rotation = new SlewRateLimiter(4); // limits for rotate side to side
 
-  public DefaultDriveCommand(DriveSubsystem drive, Joystick controller) {
+  public AutoDrive(DriveSubsystem drive, double forwardBack, double leftRight) {
     DRIVE_SUBSYSTEM = drive;
-    CONTROLLER = controller;
+
+    this.forwardBack = forwardBack;
+    this. leftRight = leftRight;
 
     addRequirements(DRIVE_SUBSYSTEM);
     // Use addRequirements() here to declare subsystem dependencies.
@@ -39,8 +43,8 @@ public class DefaultDriveCommand extends CommandBase {
   @Override
   public void execute() {
     DRIVE_SUBSYSTEM.set(
-        direction.calculate(CONTROLLER.getRawAxis(1)), // Left joysticks y axis
-        rotation.calculate(CONTROLLER.getRawAxis(2))); // Right joysticks x axis
+        direction.calculate(forwardBack), // Left joysticks y axis
+        rotation.calculate(leftRight)); // Right joysticks x axis
   }
 
   // Called once the command ends or is interrupted.

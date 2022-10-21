@@ -15,8 +15,8 @@ public class ConveyerSubsystem extends SubsystemBase {
 
 
   
-   private WPI_TalonFX conveyerMotor = new WPI_TalonFX(13); //DOCUMENT WHERE THIS IS
-   private WPI_TalonFX gateMotor = new WPI_TalonFX(9); // Near the top of the robot, right before shooter
+   private WPI_TalonFX conveyerMotor = new WPI_TalonFX(13); //shooter side right cluster (by shooter) bottom
+   private WPI_TalonFX gateMotor = new WPI_TalonFX(9); //shooter side left cluster (by shooter) bottom
 
 
    private double currGatePercOut; // Used to store the current percent output of gate motor

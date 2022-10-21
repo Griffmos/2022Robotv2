@@ -13,9 +13,9 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class ShooterSubsystem extends SubsystemBase {
 
-
-  private WPI_TalonFX shooterMotorPrimary = new WPI_TalonFX(10); //DOCUMENT WHERE THIS IS
-  private WPI_TalonFX shooterMotorSecondary = new WPI_TalonFX(7); //DOCUMENT WHERE THIS IS
+   //shooter side left/right cluster (by shooter) top (don't know which is which)
+  private WPI_TalonFX shooterMotorPrimary = new WPI_TalonFX(10);
+  private WPI_TalonFX shooterMotorSecondary = new WPI_TalonFX(7); 
 
   private double currShooterPercOut;//used to display percent output of shooter motor on smartdashboard 
 

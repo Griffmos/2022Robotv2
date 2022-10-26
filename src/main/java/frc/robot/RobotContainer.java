@@ -17,12 +17,12 @@ import frc.robot.Commands.DefaultDriveCommand;
 import frc.robot.Commands.RunConveyerCommand;
 import frc.robot.Commands.RunIntakeCommand;
 import frc.robot.Commands.RunOuttakeCommand;
+import frc.robot.Commands.RunShooterCommand;
 import frc.robot.Subsystems.ConveyerSubsystem;
 import frc.robot.Subsystems.DriveSubsystem;
 //import frc.robot.Subsystems.IntakeAndConveyerSubsystem;
 import frc.robot.Subsystems.IntakeSubsystem;
 import frc.robot.Subsystems.ShooterSubsystem;
-
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
  * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
@@ -31,7 +31,7 @@ import frc.robot.Subsystems.ShooterSubsystem;
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
-  private Joystick CONTROLLER = new Joystick(0); //Our controller from 1st port
+  private Joystick CONTROLLER = new Joystick(4); //Our controller from 1st port
 
   //regular buttons on controller
   private JoystickButton X_BUTTON = new JoystickButton(CONTROLLER, 2);
@@ -75,7 +75,8 @@ public class RobotContainer {
     L1_BUMPER.whileHeld(new RunIntakeCommand(INTAKE_SUBSYSTEM, CONVEYER_SUBSYSTEM)); //L1 bumper intakes
     R1_BUMPER.whileHeld(new RunOuttakeCommand(INTAKE_SUBSYSTEM, CONVEYER_SUBSYSTEM)); //R1 bumper outtakes
 
-    R2_TRIGGER.whileHeld(new RunConveyerCommand(INTAKE_SUBSYSTEM, CONVEYER_SUBSYSTEM)); //R2 trigger runs conveyer (actually pushes ball in)
+    R2_TRIGGER.whileHeld(new RunShooterCommand(SHOOTER_SUBSYSTEM));
+    L2_TRIGGER.whileHeld(new RunConveyerCommand(INTAKE_SUBSYSTEM, CONVEYER_SUBSYSTEM)); //R2 trigger runs conveyer (actually pushes ball in)
   }
 
   //runs if no other commands are running

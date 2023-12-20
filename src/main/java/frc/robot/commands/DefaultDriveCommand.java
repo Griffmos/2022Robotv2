@@ -39,7 +39,7 @@ public class DefaultDriveCommand extends CommandBase {
   @Override
   public void execute() {
     DRIVE_SUBSYSTEM.set(
-        direction.calculate(CONTROLLER.getRawAxis(1)), // Left joysticks y axis
+        -direction.calculate(CONTROLLER.getRawAxis(1)), // Left joysticks y axis, need to make negative because controller is bozo
         rotation.calculate(CONTROLLER.getRawAxis(2))); // Right joysticks x axis
   }
 

@@ -80,7 +80,7 @@ public class DriveSubsystem extends SubsystemBase {
   // leftStickY corresponds to our robot's speed rightStickX corresponds to our
   // robot's z rotation
   public void set(double leftStickY, double rightStickX) {
-    leftStickY = -Constants.motorLimitPercent * leftStickY;
+    leftStickY = Constants.motorLimitPercent * leftStickY;
     rightStickX = Constants.motorLimitPercent * rightStickX;
 
     // using arcade drive
